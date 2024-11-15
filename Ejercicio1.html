@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio1</title>
+    <style>
+      img {
+        width: 300px;
+        height: auto;
+        cursor: pointer;
+      }
+      .border-red {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/Assets/imgs/JS.jpg" alt="Imagen" id="image" />
+
+    <script>
+      const img = document.getElementById("image");
+
+      img.addEventListener("click", function () {
+        img.classList.toggle("border-red");
+      });
+    </script>
+    <button onclick="location.href='index.html'">Regresar Index</button>
+  </body>
+</html>

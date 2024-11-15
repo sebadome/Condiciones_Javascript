@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+  </head>
+  <body>
+    <h1>Ejercicio 3</h1>
+
+    <select id="digit1">
+      <option value="-">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    <select id="digit2">
+      <option value="-">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    <select id="digit3">
+      <option value="-">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+
+    <button
+      id="ingresarBtn"
+      onclick="verificarPassword()"
+      style="display: none"
+    >
+      Ingresar
+    </button>
+    <p id="resultado"></p>
+
+    <button onclick="location.href='index.html'">Regresar al Inicio</button>
+
+    <script>
+      let ingresarBtnVisible = false;
+      function mostrarIngresarButton() {
+        const digit1 = document.getElementById("digit1").value;
+        const digit2 = document.getElementById("digit2").value;
+        const digit3 = document.getElementById("digit3").value;
+
+        const password = digit1 + digit2 + digit3;
+        const ingresarBtn = document.getElementById("ingresarBtn");
+
+        if (password === "911" && !ingresarBtnVisible) {
+          ingresarBtn.style.display = "inline";
+          ingresarBtnVisible = true;
+          resultado.textContent = "password 1 es correcto";
+        }
+      }
+
+      function verificarPassword() {
+        const digit1 = document.getElementById("digit1").value;
+        const digit2 = document.getElementById("digit2").value;
+        const digit3 = document.getElementById("digit3").value;
+
+        const password = digit1 + digit2 + digit3;
+        const resultado = document.getElementById("resultado");
+
+        if (password === "911") {
+          ingresarBtn.style.display = "inline";
+          resultado.textContent = "password 1 es correcto";
+        } else if (password === "714") {
+          resultado.textContent = "password 2 es correcto";
+        } else {
+          resultado.textContent = "password incorrecto";
+        }
+      }
+
+      document
+        .getElementById("digit1")
+        .addEventListener("change", mostrarIngresarButton);
+      document
+        .getElementById("digit2")
+        .addEventListener("change", mostrarIngresarButton);
+      document
+        .getElementById("digit3")
+        .addEventListener("change", mostrarIngresarButton);
+    </script>
+  </body>
+</html>
